@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Registration - RinfotekApps</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>User Registration - Sign Up</h1>
+		</div>
+
+		<form th:action="@{/do_register}" method="post" style="max-width:600px; margin:0 auto;" th:object="${user}">
+
+			<div class="m-3">
+
+				<div class="form-group row">
+					<label class="col-form-label col-4">E-mail</label>
+					<div class="col-8">
+						<input type="email" class="form-control" th:field="*{email}" required />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4">Password</label>
+					<div class="col-8">
+						<input type="password" class="form-control" th:field="*{password}" required minlength="6"
+							maxlength="10" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4">First Name</label>
+					<div class="col-8">
+						<input type="text" class="form-control" th:field="*{fName}" required minlength="2"
+							maxlength="20" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label class="col-form-label col-4">Last Name</label>
+					<div class="col-8">
+						<input type="text" class="form-control" th:field="*{lName}" required minlength="2"
+							maxlength="20" />
+					</div>
+				</div>
+
+				<div>
+					<button type="submit" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalCenter">Sign Up</button>
+
+					<!-- BootstrapLogic for pupop button-->
+					<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+						aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLongTitle">Ask</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>What are you looking for business or retails &amp;?</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--Hover logic-->
+
+					<!--<span class="ac">What are looking you for?</span>-->
+
+
+
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$("#myButton").on("click", function (e) {
+				alert("You have clicked me!!!");
+			})
+		})
+	</script>
+
+</body>
+
+</html>

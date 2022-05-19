@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<style>
+	span {
+		display: none;
+	}
+
+	a:hover+span {
+		display: block;
+	}
+</style>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Registration Succeeded - RinfotekApps</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+</head>
+
+<body>
+	<div class="container text-center">
+		<div>
+			<h3>You have signed up successfully!</h3>
+			<h4><a th:href="@{/login}">Click here to login</a>
+				<span><h1>Business customer</h1>
+								<h1>Retail customer</h1>
+
+				</span>
+				<span>Retail customer</span>
+
+			</h4>
+			<span>Stuff shown on hover</span>
+
+		</div>
+
+	</div>
+</body>
+
+</html>
